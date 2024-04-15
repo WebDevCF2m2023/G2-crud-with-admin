@@ -31,8 +31,8 @@
                         <th>modifier</th>
                         <th>supprimer</th>
                     </tr>
-                    <tr>
-                        <?php foreach($ourDatas as $item): ?>
+                    <?php foreach($ourDatas as $item): ?>
+                        <tr>
                             <td><?=$item['idourdatas']?></td>
                             <td><?=$item['title']?></td>
                             <td><?=$item['ourdesc']?></td>
@@ -40,8 +40,8 @@
                             <td><?=$item['longitude']?></td>
                             <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" alt="icon update" width="32" height="32"></a></td>
                             <td><a href="?delete=<?=$item['idourdatas']?>" onclick="return confirm('Êtes-vous sûre de vouloir le supprimer ?')"><img src="img/delete.png" alt="icon delete" width="32" height="32"></a></td>
-                        <?php endforeach; ?>
-                    </tr>
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
         <?php endif; ?>
     </div>

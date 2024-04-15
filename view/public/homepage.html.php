@@ -30,15 +30,15 @@
                         <th>modifier</th>
                         <th>supprimer</th>
                     </tr>
-                    <tr>
-                        <?php foreach($ourDatas as $item): ?>
+                    <?php foreach($ourDatas as $item): ?>
+                        <tr>
                             <td><?=$item['idourdatas']?></td>
                             <td><?=$item['title']?></td>
                             <td><?=$item['ourdesc']?></td>
                             <td><?=$item['latitude']?></td>
                             <td><?=$item['longitude']?></td>
-                        <?php endforeach; ?>
-                    </tr>
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
         <?php endif; ?>
     </div>

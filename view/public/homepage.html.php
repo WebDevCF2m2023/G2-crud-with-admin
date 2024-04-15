@@ -19,10 +19,27 @@
                 <h3><?=$message?></h3>
         <?php elseif(isset($error)): ?>
                 <h3 class="error"><?=$error?></h3>
-        <?php else: 
-                foreach($ourDatas as $item): ?>
-                    |
-                <?php endforeach; ?>
+        <?php else: ?>
+                <table>
+                    <tr>
+                        <th>idourdatas</th>
+                        <th>title</th>
+                        <th>ourdesc</th>
+                        <th>latitude</th>
+                        <th>longitude</th>
+                        <th>modifier</th>
+                        <th>supprimer</th>
+                    </tr>
+                    <tr>
+                        <?php foreach($ourDatas as $item): ?>
+                            <td><?=$item['idourdatas']?></td>
+                            <td><?=$item['title']?></td>
+                            <td><?=$item['ourdesc']?></td>
+                            <td><?=$item['latitude']?></td>
+                            <td><?=$item['longitude']?></td>
+                        <?php endforeach; ?>
+                    </tr>
+                </table>
         <?php endif; ?>
     </div>
 </body>

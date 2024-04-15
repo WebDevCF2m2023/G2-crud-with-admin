@@ -9,9 +9,41 @@
     <h1>Admin Homepage</h1>
     <nav>
         <ul>
-            <li><a href="./">Accueil</a></li>
+            <li><a href="./">Accueil Admin</a></li>
+            <li><a href="?insert">Ajouter une data</a>
             <li><a href="?disconnect">Déconnexion</a>
         </ul>
     </nav>
+    <div class="content">
+        <h2>Administration de nos datas</h2>
+        <?php if(isset($message)): ?>
+                <h3><?=$message?></h3>
+        <?php elseif(isset($error)): ?>
+                <h3 class="error"><?=$error?></h3>
+        <?php else: ?>
+                <table>
+                    <tr>
+                        <th>idourdatas</th>
+                        <th>title</th>
+                        <th>ourdesc</th>
+                        <th>latitude</th>
+                        <th>longitude</th>
+                        <th>modifier</th>
+                        <th>supprimer</th>
+                    </tr>
+                    <tr>
+                        <?php foreach($ourDatas as $item): ?>
+                            <td><?=$item['idourdatas']?></td>
+                            <td><?=$item['title']?></td>
+                            <td><?=$item['ourdesc']?></td>
+                            <td><?=$item['latitude']?></td>
+                            <td><?=$item['longitude']?></td>
+                            <td><a href="?update=<?=$item['idourdatas']?>"><img src="img/update.png" alt="icon update" width="32" height="32"></a></td>
+                            <td><a href="?delete=<?=$item['idourdatas']?>"><img src="img/delete.png" alt="icon delete" width="32" height="32"></a></td>
+                        <?php endforeach; ?>
+                    </tr>
+                </table>
+        <?php endif; ?>
+    </div>
 </body>
 </html>

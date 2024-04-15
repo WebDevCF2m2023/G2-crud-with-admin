@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Insertion</title>
+</head>
+<body>
+    <h1>Admin Insertion</h1>
+    <nav>
+        <ul>
+            <li><a href="./">Accueil Admin</a></li>
+            <li><a href="?insert">Ajouter une data</a>
+            <li><a href="?disconnect">Déconnexion</a>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Insertion d'une data</h2>
+        <form action="" name="ourdatas" method="POST">
+            <?php if(isset($error)): ?>
+                <h3 class="error"><?= $error ?></h3>
+            <?php endif; ?>
+            <input type="text" name="title" placeholder="title" required><br>
+            <textarea name="ourdesc" placeholder="Description" cols="30" rows="10" required></textarea><br>
+            <input type="number" name="latitude" step="0.0000001" placeholder="latitude" required><br>
+            <input type="number" name="longitude" step="0.0000001" placeholder="longitude" required><br>
+            <input type="submit" value="Insérer">
+        </form>
+    </div>
+</body>
+</html>

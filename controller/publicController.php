@@ -1,7 +1,4 @@
 <?php
-// chargement de dépendances qui seraient utiles que pour la partie publique
-require_once "../model/administratorModel.php";
-
 // si on essaie de se connecter
 if(isset($_GET['connect'])){
 
@@ -28,6 +25,11 @@ if(isset($_GET['connect'])){
     require "../view/public/connect.html.php";
     exit();
 }
+
+$ourDatas = getAllOurdatas($connect);
+
+if(is_string($ourDatas)) $message = $ourDatas;
+elseif(isset($ourDatas['error'])) $error = $ourDatas['error'];
 
 // chargement de la vue de l'accueil
 require "../view/public/homepage.html.php";

@@ -27,8 +27,6 @@
                         <th>ourdesc</th>
                         <th>latitude</th>
                         <th>longitude</th>
-                        <th>modifier</th>
-                        <th>supprimer</th>
                     </tr>
                     <?php foreach($ourDatas as $item): ?>
                         <tr>

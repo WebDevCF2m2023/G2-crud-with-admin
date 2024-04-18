@@ -31,7 +31,7 @@ if(!empty($_GET['update']) && ctype_digit($_GET['update'])){
         if($result === true){
             header("Location: ./");
             die();
-        }else $error = $result;
+        }
     }
 
     $data = getOurDataById($connect, $id);

@@ -3,6 +3,26 @@
 // si on essaye de se déconnecter (administratorDisconnect nous redirige vers l'accueil)
 if(isset($_GET['disconnect'])) administratorDisconnect();
 
+// suppression
+if(isset($_GET['delete'])&&ctype_digit($_GET['delete']))
+{
+    $idDelete = (int) $_GET['delete'];
+
+    // si on valide
+    if(isset($_GET['ok'])){
+        $delete = deleteOurdatasByID($connect, $idDelete);
+        if($delete===true){
+            header("Location: ./");
+            die;
+        }
+    }
+
+    $delete = getOneOurdatasByID($connect,$idDelete);
+
+    require "../view/private/admin.delete.html.php";
+    die();
+}
+
 // modification
 if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
 
@@ -35,6 +55,7 @@ if(isset($_GET['update'])&&ctype_digit($_GET['update'])){
     //var_dump($update,$_POST);
     // appel de la vue d'update
     require "../view/private/admin.update.html.php";
+    die();
 }
 
 // insertion
